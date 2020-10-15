@@ -37,6 +37,7 @@ microk8s.reset
 sudo snap remove microk8s
 ```
 ### Remove tutorial reference
+[install microk8s](https://microk8s.io/)
 [snap remove microk8s](https://codefresh.io/kubernetes-tutorial/local-kubernetes-linux-minikube-vs-microk8s/)   
 [snap remove microk8s issue on github](https://github.com/ubuntu/microk8s/issues/58)
 
