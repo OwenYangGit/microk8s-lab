@@ -43,3 +43,18 @@ sudo snap remove microk8s
 
 ### github reference
 [microk8s github](https://github.com/ubuntu/microk8s)
+
+## 這邊簡單紀錄一下我後續發生的故事
+#### 因為內部最後還是決定使用 swarm 部署，所以我將本地的 microk8s 刪除。結果我開始用 swarm 就發生 network 問題
+![error image](./image/pic1)
+
+#### 解法參考
+[網址](https://success.mirantis.com/article/error-network-sandbox-join-failed-during-service-restarts)
+
+##### 所以我照上面的做了
+```
+ls -l /sys/class/net/ | grep vx
+udevadm info /sys/class/net/<vxlanid>
+sudo ip -d link show vx-000000-xxxxx
+sudo ip link delete vx-000000-xxxxx
+```
